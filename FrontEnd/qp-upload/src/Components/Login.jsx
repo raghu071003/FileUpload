@@ -11,7 +11,7 @@ function Login() {
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
     const navigate = useNavigate()
-    const { isLoggedIn, setIsLoggedIn } = useContext(MyContext);
+    const { isLoggedIn, setIsLoggedIn,setUsernameContext } = useContext(MyContext);
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Assuming `username` and `password` are variables holding form field values
@@ -31,6 +31,7 @@ function Login() {
             console.log(res.data.token);
             if(res.status === 200){
                 setIsLoggedIn(true);
+                setUsernameContext(username);
                 navigate('/folders'); // Navigate to home page
                 localStorage.setItem('token', res.data.token);
             } // Assuming the response contains relevant data

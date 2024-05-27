@@ -42,9 +42,9 @@ function Signup() {
                 <h1 className='text-2xl font-bold m-5'>Hey User, Please Register</h1>
             <input type="email" placeholder='Username'  id='username' className=' outline-none w-96 m-3 border-black bg-transparent p-3 text-black text-center font-semibold border-b-2 h-14 placeholder:text-black' onChange={(e)=>{setUsername(e.target.value)}}/>
             <input type="password" placeholder='Password' id='password'className=' outline-none w-96 border-black m-3 bg-transparent text-black text-center font-semibold  border-b-2 placeholder:text-black p-3' onChange={(e)=>{setPassword(e.target.value)}}/>
-            <input type="password" placeholder='Re-Password' id='password2'className=' outline-none w-96 border-black m-3 bg-transparent text-black text-center font-semibold  border-b-2 placeholder:text-black p-3' onChange={(e)=>{setPass(e.target.value)}}/>
+            <input type="password" placeholder='Re-Enter Password' id='password2'className=' outline-none w-96 border-black m-3 bg-transparent text-black text-center font-semibold  border-b-2 placeholder:text-black p-3' onChange={(e)=>{setPass(e.target.value)}}/>
             <div className='flex gap-3 p-3'>
-                <input type="checkbox" defaultChecked={isChecked} onChange={()=>setisChecked(!isChecked)}/>
+                <input type="checkbox" defaultChecked={isChecked} onChange={()=>setisChecked(!isChecked)} className=' outline-none border-none cursor-pointer bg-white'/>
                 <p>By clicking,You are accepting our terms & Conditions</p>
             </div>
             <button type='submit' className='border-2 font-bold p-3 w-fit rounded-xl border-black m-5'>Signup!</button>        

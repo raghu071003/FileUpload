@@ -5,9 +5,10 @@ const MyContext = createContext();
 
 export const MyContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username , setUsernameContext] = useState("")
 
   return (
-    <MyContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+    <MyContext.Provider value={{ isLoggedIn, setIsLoggedIn,setUsernameContext,username}}>
       {children}
     </MyContext.Provider>
   );

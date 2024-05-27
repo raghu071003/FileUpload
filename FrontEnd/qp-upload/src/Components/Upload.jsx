@@ -1,17 +1,20 @@
-import React, { useEffect, useState,useRef  } from 'react'
+import React, { useEffect, useState,useContext  } from 'react'
 import axios from 'axios'
 
-import $ from 'jquery'
+import MyContext from './Context';
 function Upload({path}) {
-  
+
+  const {username} = useContext(MyContext)
   const [title, setTitle] = useState("");
   const [file, setFile] = useState("");
+  const [UploadUser,setUploadUser] = useState("");
 
   const submitFile = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
     formData.append("file", file);
+    formData.append('uploaded by',UploadUser)
     const result = await axios.post(`http://localhost:5000/uploadFiles/${path}`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
@@ -25,6 +28,7 @@ function Upload({path}) {
    const setters = (e) => {
     setTitle(e.target.files[0].name)
     setFile(e.target.files[0])
+    setUploadUser(username)
   }
   // useEffect(() => {
   //   $('#Upload').click(function () { $('#imgupload').trigger('click'); });

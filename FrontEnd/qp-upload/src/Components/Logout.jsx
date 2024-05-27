@@ -12,7 +12,7 @@ function Logout() {
             }
             await axios.post('http://localhost:5000/logout', null, {
                 headers: {
-                    Authorization: `Bearer ${token}` // Include the token in the request headers
+                    Authorization: `${token}` // Include the token in the request headers
                 }
             });
             // After successful logout, remove token from local storage

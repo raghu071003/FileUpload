@@ -82,7 +82,7 @@ function Folders() {
         <Upload path={path} onUploadSuccess={fetchFiles} />
       </div>
     ) : (
-      <div>
+      <div className='flex justify-center items-center font-bold text-3xl'>
         <p>Please log in to view folders.</p>
         {alert('Please Login')}
       </div>
